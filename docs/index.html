@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tic-Tac-Toe | Normal &amp; Ultimate Mode</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>TIC-TAC-TOE</h1>
+      <button id="soundToggle" class="btn-small" title="Toggle Sound">Sound: ON</button>
+    </header>
+
+    <!-- Step 1: Choose Normal or Ultimate Mode -->
+    <section id="menuType" class="card">
+      <h2>Select Game Type</h2>
+      <div class="menu-buttons">
+        <button id="btnNormal" class="btn btn-primary">
+          <span class="btn-title">1. Normal Mode</span>
+          <span class="btn-sub">Classic 3×3 Tic-Tac-Toe</span>
+        </button>
+        <button id="btnUltimate" class="btn btn-ultimate">
+          <span class="btn-title">2. Ultimate Mode</span>
+          <span class="btn-sub">9-in-1 Tactical Battle!</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- Praise Banner for Ultimate Mode -->
+    <section id="praiseBanner" class="card hidden">
+      <div class="praise-title">*** ULTIMATE MODE UNLOCKED ***</div>
+      <p id="praiseText" class="praise-text"></p>
+    </section>
+
+    <!-- Step 2: Choose PvP or vs AI -->
+    <section id="menuOpponent" class="card hidden">
+      <h2>Select Opponent</h2>
+      <div class="menu-buttons">
+        <button id="btnPvP" class="btn btn-primary">
+          <span class="btn-title">1. Player vs Player</span>
+          <span class="btn-sub">Play with a friend on this device</span>
+        </button>
+        <button id="btnAI" class="btn btn-ai">
+          <span class="btn-title">2. Player vs AI</span>
+          <span class="btn-sub"><span class="x-color">X = You</span>, <span class="o-color">O = AI</span></span>
+        </button>
+      </div>
+      <button id="btnBackToType" class="btn-link">← Back</button>
+    </section>
+
+    <!-- Game Screen -->
+    <section id="gameScreen" class="hidden">
+      <div id="statusBar" class="status-bar">Player X's Turn</div>
+      <div id="subStatus" class="sub-status"></div>
+
+      <div id="boardContainer" class="board-container"></div>
+
+      <div class="controls">
+        <button id="btnRestart" class="btn-small">Restart Round</button>
+        <button id="btnChangeMode" class="btn-small">Change Mode</button>
+      </div>
+    </section>
+  </div>
+
+  <!-- End Screen Modal -->
+  <div id="endModal" class="modal hidden">
+    <div class="modal-content">
+      <div id="endFlash" class="end-flash">!!! GAME OVER !!!</div>
+      <div id="endArt" class="end-art"></div>
+      <h2 id="endTitle"></h2>
+      <div class="joke-box">
+        <p class="joke-label">Here's a programmer joke for you:</p>
+        <p id="jokeQ" class="joke-q"></p>
+        <p id="jokeA" class="joke-a"></p>
+      </div>
+      <div class="controls">
+        <button id="btnPlayAgain" class="btn btn-primary">Play Again</button>
+        <button id="btnModalMenu" class="btn-small">Main Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
